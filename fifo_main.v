@@ -22,7 +22,7 @@ module g2b_convert #(parameter PTR_WIDTH=3) (
     always @(*) begin
         binary_output[PTR_WIDTH] = gray_input[PTR_WIDTH];
         for (i = PTR_WIDTH-1; i >= 0; i = i - 1) begin                         //g to b
-            binary_output[i] = binary_output[i+1] ^ gray_input[i];          //for(i=0;iN-1;i++)begin
+            binary_output[i] = binary_output[i+1] ^ gray_input[i];          //for(i=0;i<N-1;i++)begin
         end                                                                  //  assign binary_num[i]=^(graycode_num>>i);
     end                                                                       //  assign binary_num[N-1]=graycode_num[N-1];
 endmodule
